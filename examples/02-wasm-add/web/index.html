@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wasm Calculator</title>
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <main>
+      <h1>Wasm Calculator</h1>
+      <label>
+        왼쪽 값
+        <input
+          id="left"
+          type="number"
+          min="-2147483648"
+          max="2147483647"
+          step="1"
+          value="7"
+        >
+      </label>
+      <label>
+        오른쪽 값
+        <input
+          id="right"
+          type="number"
+          min="-2147483648"
+          max="2147483647"
+          step="1"
+          value="5"
+        >
+      </label>
+      <button id="add" type="button" disabled>더하기</button>
+      <button id="subtract" type="button" disabled>빼기</button>
+      <output id="result" aria-live="polite">모듈 로딩 중</output>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

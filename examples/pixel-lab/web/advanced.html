@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Pixel Lab Advanced Modules</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">C++ / WebAssembly</p>
+        <h1>고급 모듈 확인</h1>
+      </div>
+      <a href="./index.html">Pixel Lab으로 돌아가기</a>
+    </header>
+
+    <main class="advanced-workspace">
+      <section class="advanced-panel" aria-labelledby="advanced-heading">
+        <div class="control-section">
+          <h2 id="advanced-heading">고정 입력</h2>
+          <p><code>1, 2, 3, 4, 5, 6, 7</code>의 예상 합계는 <code>28</code>이다.</p>
+        </div>
+
+        <section class="metrics" aria-labelledby="advanced-results-heading">
+          <h2 id="advanced-results-heading">실행 결과</h2>
+          <dl>
+            <div>
+              <dt>SIMD</dt>
+              <dd id="simd-result">준비 중</dd>
+            </div>
+            <div>
+              <dt>pthread</dt>
+              <dd id="thread-result">준비 중</dd>
+            </div>
+            <div>
+              <dt>교차 출처 격리</dt>
+              <dd id="isolation-result">확인 중</dd>
+            </div>
+          </dl>
+        </section>
+
+        <p id="advanced-status" class="advanced-status" role="status" aria-live="polite">
+          모듈을 확인하는 중
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./advanced.js"></script>
+  </body>
+</html>

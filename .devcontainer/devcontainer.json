@@ -1,0 +1,23 @@
+{
+  "name": "WebAssembly for Beginners",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "clang++ --version >/dev/null && em++ --version >/dev/null && echo 'Codespace environment is ready'",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Pixel Lab",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

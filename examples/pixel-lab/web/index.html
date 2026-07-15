@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Pixel Lab</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">C++ / WebAssembly</p>
+        <h1>Pixel Lab</h1>
+      </div>
+      <output id="runtime-status" class="runtime-status" aria-live="polite">
+        모듈 준비 중
+      </output>
+    </header>
+
+    <main class="workspace">
+      <section class="canvas-stage" aria-label="이미지 미리보기">
+        <canvas id="preview" width="960" height="640"></canvas>
+      </section>
+
+      <aside class="controls" aria-label="이미지 도구">
+        <section class="control-section">
+          <h2>파일</h2>
+          <label class="file-button" for="image-input">이미지 열기</label>
+          <input id="image-input" type="file" accept="image/*">
+          <div class="button-row">
+            <button id="reset-button" type="button" disabled>원본 복원</button>
+            <button id="download-button" type="button" disabled>PNG 저장</button>
+          </div>
+        </section>
+
+        <section class="control-section">
+          <h2>필터</h2>
+          <div class="filter-grid">
+            <button data-filter="invert" type="button" disabled>색 반전</button>
+            <button data-filter="grayscale" type="button" disabled>흑백</button>
+            <button data-filter="grayscale-js" type="button" disabled>JS 흑백</button>
+          </div>
+          <label class="range-label" for="brightness">
+            <span>밝기</span>
+            <output id="brightness-value" for="brightness">0</output>
+          </label>
+          <input id="brightness" type="range" min="-100" max="100" value="0" disabled>
+          <button id="brightness-button" class="primary-button" type="button" disabled>
+            밝기 적용
+          </button>
+        </section>
+
+        <section class="metrics" aria-labelledby="metrics-heading">
+          <h2 id="metrics-heading">최근 처리</h2>
+          <dl>
+            <div>
+              <dt>이미지</dt>
+              <dd id="image-size">960 x 640</dd>
+            </div>
+            <div>
+              <dt id="operation-time-label">처리 구간</dt>
+              <dd id="compute-time">-</dd>
+            </div>
+            <div>
+              <dt>전체</dt>
+              <dd id="total-time">-</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
